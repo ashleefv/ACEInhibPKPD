@@ -1,0 +1,80 @@
+********************************************************************************
+PKPD ACE Inhibition Model
+********************************************************************************
+Written by Ashlee N. Ford Versypt, Grace K. Harrell, and Alexandra N. McPeak
+2015-2017
+School of Chemical Engineering
+Oklahoma State University
+Corresponding author: A. N. Ford Versypt, ashleefv@okstate.edu
+********************************************************************************
+Data sources for ACE inhibitor drugs:
+   H. Shionoiri, S. Ueda, K. Minamisawa, Pharmacokinetics and Pharmacodynamics 
+   of Benazepril in Hypertensive Patients with Normal and Impaired Renal-
+   Function, Journal of Cardiovascular Pharmacology 20 (3) (1992) 348–57.
+
+   H. Shionoiri, E. Gotoh, N. Takagi, Antihypertensive Effects and 
+   Pharmacokinetics of Single and Consecutive Doses of Cilazapril in 
+   Hypertensive Patients with Normal and Impaired Renal-Function, Journal of 
+   Cardiovascular Pharmacology 11 (2) (1988) 242–9.
+********************************************************************************
+___MAIN FILES___
+
+GUI_ACE_Inhib_PKPD.m & .fig
+   Runs the model interactively with a graphical user interface. Designed for 
+   educational use for students in grades 6-12 and undergraduate students.
+ 
+OR
+  
+run_PKPD_without_GUI.m
+   Runs the model manually either in the Editor or by passing arguments in the
+   command line. Can run more cases that allowable in the GUI and can specify
+   plot_mode to show more plots than available through GUI or to produce and 
+   save publication-quality plots.
+********************************************************************************
+___SUPPLEMENTARY FILES___
+
+PKPD_ACE_Inhibition_AngII.m
+   The central file that uses case-specific parameters and dosing information 
+   as input to the PKPD model of ACE inhibitor dose impact on AngII plasma 
+   concentration. Output includes the vectors of time and the concentrations of 
+   the drug, diacid form, AngI, AngII, and Renin and the percent of inhibition 
+   (not in this order).
+*** Don't run this file directly. Instead let it be called by either 
+   call_PKPD_model_scalar.m or call_PKPD_model_vector_param_est.m
+   (described subsequently) that correctly define all the input values.
+
+setup_mat_for_PK_params.m 
+   All PK parameters for the drug/renalfunction combinations are edited and 
+   written to .mat files for use in other routines.
+
+setup_mat_for_data_estimated_params.m
+   All data for parameter estimation and the estimated parameters are edited and
+   written to .mat files for use in other routines.
+   
+run_params.m
+   Sets the input values that GUI_ACE_Inhib_PKPD.m sets interactively. It is
+   used as a default input through a .mat file for run_PKPD_without_GUI.m and 
+   param_estimation.m.
+
+call_PKPD_model_vector_param_est.m
+   Sets up parameters once before a loop through tfinal_dosing vector calling
+   PKPD_ACE_Inhibition_AngII.m at each loop iteration. Output is the vector of  
+   Y values used for parameter estimation comparison to data.
+   
+call_PKPD_model_scalar.m
+   Used by GUI_ACE_Inhib_PKPD.m, run_PKPD_without_GUI.m, and param_estimation.m. 
+   Sets up parameters before calling PKPD_ACE_Inhibition_AngII.m for a scalar 
+   value of tfinal_dosing. Output is all of the output from 
+   PKPD_ACE_Inhibition_AngII.m with options for plotting and saving figures
+   through plot_mode string.
+   
+*.mat
+   Needed to run the programs to pass data, parameters, and calculated values.
+   
+/pub_plots/.
+   Subdirectory where plots are stored when plot_mode = 'pub_plots'
+   
+export_fig.m
+   MATLAB package to nicely export figures.
+   Download: https://www.mathworks.com/matlabcentral/fileexchange/23629-export-fig
+   Tips for usage: https://github.com/altmany/export_fig/blob/master/README.md
