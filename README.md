@@ -3,6 +3,8 @@ PKPD model for ACE inhibition with benazapril or cilazapril; educational drug do
 
 [![DOI](https://zenodo.org/badge/79126249.svg)](https://zenodo.org/badge/latestdoi/79126249)
 
+![GUI screenshot](thumbnail.png)
+
 ## Overview
 This app is an interactive computer simulation that can be used to design the best dosage of two pharmaceuticals for reducing high blood pressure. The app uses concepts from chemical engineering and tools from mathematics, pharmacology, and computational science to describe and solve the the dynamics of the chemical reactions in the human body involved in the absorption, metabolism, and excretion of the drug and how the blood pressure-regulating homone Angiotensin II is affected by the drug concentration as a function of time.  Begin by entering dose size and frequency values and select the ACE inhibitor drug and the patient kidney function from the drop down menus. Run the simulation to generate the plots. Use the plots to analyze the behavior of the tested dosing schedule. Determine what dose size and frequency will be the most effective in lowering the blood pressure by lowering the Angiotensin II hormone concentration of the individual to a normal level while managing tradeoffs like efficacy, convenience, price, and side effects. Advanced users may refer to the MATLAB run_PKPD_without_GUI.m to bypass the GUI to show additional results or edit the code directly.
 
