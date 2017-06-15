@@ -1,0 +1,33 @@
+{
+  "@context": "https://raw.githubusercontent.com/mbjones/codemeta/master/codemeta.jsonld",
+  "@type": "Code",
+  "author": [
+    {
+      "@id": "http://orcid.org/0000-0001-9059-5703",
+      "@type": "Person",
+      "email": "ashleefv@okstate.edu",
+      "name": "Ashlee N. Ford Versypt",
+      "affiliation": "School of Chemical Engineering, Oklahoma State University"
+    },
+    {
+      "@type": "Person",
+      "name": "Grace K. Harrell",
+      "affiliation": "School of Chemical Engineering, Oklahoma State University"
+    },
+    {
+      "@type": "Person",
+      "name": "Alexandra N. McPeak",
+      "affiliation": "School of Chemical Engineering, Oklahoma State University"
+    }
+  ],
+  "identifier": "https://doi.org/10.5281/zenodo.247388",
+  "codeRepository": "https://github.com/ashleefv/ACEInhibPKPD",
+  "datePublished": "2017-01-16",
+  "dateModified": "2017-01-16",
+  "dateCreated": "2017-01-16",
+  "description": "This MATLAB app is an interactive computer simulation that can be used to design the best dosage of pharmaceuticals for reducing high blood pressure. The app uses concepts from chemical engineering and tools from mathematics, pharmacology, and computational science to describe and solve the the dynamics of the chemical reactions in the human body involved in the absorption, metabolism, and excretion of the drug and how the blood pressure-regulating homone angiotensin II is affected by the drug concentration as a function of time.",
+  "keywords": "MATLAB, pharmacology, biomedical engineering, mathematical model",
+  "license": "BSD",
+  "title": "ACEInhibPKPD",
+  "version": "v1.0"
+}
