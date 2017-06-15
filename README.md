@@ -15,8 +15,11 @@ School of Chemical Engineering,
 Oklahoma State University.
 Corresponding author: A. N. Ford Versypt, ashleefv@okstate.edu
 
-## Related Publication for Model Details
+### Related publication for model details
 A. N. Ford Versypt, G. K. Harrell, A. N. McPeak, A pharmacokinetic/pharmacodynamic model of ACE inhibition of the renin-angiotensin system for normal and impaired renal function, Computers & Chemical Engineering, 104 (2017) 311–322. https://doi.org/10.1016/j.compchemeng.2017.03.027
+
+### Related publication for educational use details
+G. K. Harrell, A. N. McPeak, and A. N. Ford Versypt, A Pharmacokinetic Simulation-Based Module to Introduce Mass Balances and Chemical Engineering Design Concepts to Engineering Freshmen, Proceedings of the ASEE Annual Conference, Columbus, OH, 2017 (accepted).
 
 ### Data sources for ACE inhibitor drugs
 * H. Shionoiri, S. Ueda, K. Minamisawa, Pharmacokinetics and Pharmacodynamics 
@@ -42,7 +45,7 @@ OR
    plot_mode to show more plots than available through GUI or to produce and 
    save publication-quality plots.
 
-### Supplementary files
+### Dependent & supplemental files
 
 * PKPD_ACE_Inhibition_AngII.m.
    The central file that uses case-specific parameters and dosing information 
