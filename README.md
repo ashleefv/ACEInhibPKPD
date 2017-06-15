@@ -15,6 +15,9 @@ School of Chemical Engineering,
 Oklahoma State University.
 Corresponding author: A. N. Ford Versypt, ashleefv@okstate.edu
 
+## Related Publication for Model Details
+A. N. Ford Versypt, G. K. Harrell, A. N. McPeak, A pharmacokinetic/pharmacodynamic model of ACE inhibition of the renin-angiotensin system for normal and impaired renal function, Computers & Chemical Engineering, 104 (2017) 311–322. https://doi.org/10.1016/j.compchemeng.2017.03.027
+
 ### Data sources for ACE inhibitor drugs
 * H. Shionoiri, S. Ueda, K. Minamisawa, Pharmacokinetics and Pharmacodynamics 
    of Benazepril in Hypertensive Patients with Normal and Impaired Renal-
