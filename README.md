@@ -6,10 +6,10 @@ PKPD model for ACE inhibition with benazapril or cilazapril; educational drug do
 ![GUI screenshot](thumbnail.png)
 
 ## Overview
-This app is an interactive computer simulation that can be used to design the best dosage of two pharmaceuticals for reducing high blood pressure. The app uses concepts from chemical engineering and tools from mathematics, pharmacology, and computational science to describe and solve the the dynamics of the chemical reactions in the human body involved in the absorption, metabolism, and excretion of the drug and how the blood pressure-regulating homone angiotensin II (Ang II) is affected by the drug concentration as a function of time.
+This app is an interactive computer simulation that can be used to design the best dosage of two pharmaceuticals for reducing high blood pressure. The app uses concepts from chemical engineering and tools from mathematics, pharmacology, and computational science to describe and solve the the dynamics of the chemical reactions in the human body involved in the absorption, metabolism, and excretion of the drug and how the blood pressure-regulating homone angiotensin II (Ang II) is affected by the drug concentration as a function of time. The model solved in the software is a pharmacokinetic/pharmacodynamic model for ACE inhibitors that reduce the levels of Ang II in the body to lower blood pressure. A novel feature of the model is the incoporation of normal and impaired renal function patient data and scenarios. This is imporant given the prevalence of using this class of pharmaceuticals for treating chronic kidney disease in addition to high blood pressure.
 
 ## Target Audience
-This software is intended to be used by engineering educators working with college freshmen or high school students and by systems biology researchers investigating pharmaceuticals to modulate the renin-angiotensin system.
+This software is intended to be used by engineering educators working with college freshmen or high school students and by researchers investigating pharmaceuticals to reduce Ang II with ACE inhibitors in hypertension and chronic kidney disease. 
 
 ## PKPD ACE Inhibition Model
 ### Authors
