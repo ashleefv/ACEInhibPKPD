@@ -1,7 +1,7 @@
 # ACEInhibPKPD
 PKPD model for ACE inhibition with benazapril or cilazapril; educational drug dosing app for treatment of high blood pressure
 
-[![DOI](https://zenodo.org/badge/79126249.svg)](https://zenodo.org/badge/latestdoi/79126249)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.885362.svg)](https://doi.org/10.5281/zenodo.885362)
 
 ![GUI screenshot](thumbnail.png)
 
