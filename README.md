@@ -19,7 +19,7 @@ Oklahoma State University.
 Corresponding author: A. N. Ford Versypt, ashleefv@okstate.edu
 
 ### Software publication
-A. N. Ford Versypt, G. K. Harrell, A. N. McPeak, (2017). ACEInhibPKPD: An open-source MATLAB app for a pharmacokinetic/pharmacodynamic model of ACE inhibition. Journal of Open Source Software, 2(17), 340, doi:10.21105/joss.00340
+A. N. Ford Versypt, G. K. Harrell, A. N. McPeak, (2017). ACEInhibPKPD: An open-source MATLAB app for a pharmacokinetic/pharmacodynamic model of ACE inhibition. Journal of Open Source Software, 2(17), 340, https://doi.org/10.21105/joss.00340
 
 ### Related publication for model details
 A. N. Ford Versypt, G. K. Harrell, A. N. McPeak, A pharmacokinetic/pharmacodynamic model of ACE inhibition of the renin-angiotensin system for normal and impaired renal function, Computers & Chemical Engineering, 104 (2017) 311–322. https://doi.org/10.1016/j.compchemeng.2017.03.027
