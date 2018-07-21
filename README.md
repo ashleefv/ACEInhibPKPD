@@ -20,6 +20,9 @@ School of Chemical Engineering,
 Oklahoma State University.
 Corresponding author: A. N. Ford Versypt, ashleefv@okstate.edu
 
+v.2.1 co-author Carley E. Eastep, School of Chemical Engineering,
+Oklahoma State University.
+
 ### Software publication
 A. N. Ford Versypt, G. K. Harrell, A. N. McPeak, (2017). ACEInhibPKPD: An open-source MATLAB app for a pharmacokinetic/pharmacodynamic model of ACE inhibition. Journal of Open Source Software, 2(17), 340, https://doi.org/10.21105/joss.00340
 
@@ -38,6 +41,23 @@ G. K. Harrell, A. N. McPeak, and A. N. Ford Versypt, A pharmacokinetic simulatio
    Pharmacokinetics of Single and Consecutive Doses of Cilazapril in 
    Hypertensive Patients with Normal and Impaired Renal-Function, Journal of 
    Cardiovascular Pharmacology 11 (2) (1988) 242–9.
+
+for v.2.1
+* M. Neubeck, D. Fliser, M. Pritsch, K. Weißer, M. Fliser, J.
+    Nussberger, E. Ritz, E. Mutschler, Pharmacokinetics and
+   pharmacodynamics of lisinopril in advanced renal failure, European
+   Journal of Clinical Pharmacology 46 (6) (1994) 537-43.
+*  H.Shionoiri, G. Yasuda, A. Ikeda, T. Ohta, E. Miyajima, and
+   Y. Kaneko, Pharmacokinetics and depressor effect of delapril
+   in patients with essential hypertension, Clinical Pharmacology & 
+   Therapeutics 41 (1) (1987) 74–79.
+* ER. Debusmann, J. Ocon-Pujadas, W. Lahn, et al, Influence of renal
+    function on the pharmacokinetics of ramipril (HOE 498), American Journal Cardiology  59 (1987) D70-D78. 
+*    J. Ocon-Pujadas, E. R. Debusmann, F. Jane, W. Lahn, R. Irmisch, J.
+    Mora, and H. Grotsch, Pharmacodynamic effects of a single 10-mg dose
+    of the angiotensin converting enzyme-inhibitor ramipril in patients
+    with impaired renal-function, Journal of Cardiovascular Pharmacology
+    13 (3) (1989) S45-S48.
 
 ### Installation file
 
