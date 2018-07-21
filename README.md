@@ -1,5 +1,7 @@
 # ACEInhibPKPD
-PKPD model for ACE inhibition with benazapril or cilazapril; educational drug dosing app for treatment of high blood pressure
+PKPD model for ACE inhibition with benazepril or cilazapril; educational drug dosing app for treatment of high blood pressure
+
+Note: SB17CHE.mlappinstall is an updated version that includes 5 drugs: benazepril, cilazapril, lisinopril, delapril, and ramipril.
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.885362.svg)](https://doi.org/10.5281/zenodo.885362)
 
@@ -40,6 +42,8 @@ G. K. Harrell, A. N. McPeak, and A. N. Ford Versypt, A pharmacokinetic simulatio
 ### Installation file
 
 The app install file ACEInhibPKPD.mlappinstall works much like a zip file with the added features of automated extraction in MATLAB and creation of a menu button to run the GUI. Click the menu button to open the GUI. Alternatively, the code may be opened directly in MATLAB. Descriptions of the main files and dependent & supplemental files are described in the following sections.
+
+Note: SB17CHE.mlappinstall is an updated version that includes 5 drugs with normal and/or impaired kidney functions.
 
 ### Main files
 
