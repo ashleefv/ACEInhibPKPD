@@ -24,7 +24,7 @@ School of Chemical Engineering,
 Oklahoma State University.
 Corresponding author: A. N. Ford Versypt, ashleefv@okstate.edu
 
-v.2.1 co-author Carley E. Eastep, School of Chemical Engineering,
+v.2.1 co-author Carley V. Eastep, School of Chemical Engineering,
 Oklahoma State University.
 
 ### Software publication
