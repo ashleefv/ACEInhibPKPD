@@ -47,7 +47,7 @@ function varargout = GUI_ACE_Inhib_PKPD(varargin)
 
 % Edit the above text to modify the response to help GUI_ACE_Inhib_PKPD
 
-% Last Modified by GUIDE v2.5 13-Jun-2016 10:45:33
+% Last Modified by GUIDE v2.5 19-Jul-2017 14:08:41
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -88,6 +88,7 @@ handles.drugname = 'benazepril';
 handles.renalfunction = 'normal';
 handles.tfinal_dosing = 24;
 handles.baseline = 70; % 30% reduction in ANGII as desired threshold
+handles.zero = 0;
 handles.checked = 'no';
 guidata(hObject, handles);
 
@@ -105,7 +106,7 @@ handles.ColOrd = get(handles.Drugvstime,'ColorOrder');
 handles.row_index = 0;
 % update_gui_plot(hObject,handles);
 plot_baseline(hObject,handles)
-
+plot_zero(hObject,handles);
 % Choose default command line output for GUI_ACE_Inhib_PKPD
 handles.output = hObject;
 
@@ -133,15 +134,21 @@ handles.coefficients(5) = k_cons_AngII;
 guidata(hObject, handles);
 
 function handles = run_drug_dose_to_AngII(hObject,handles)
-drugoutput = call_PKPD_model_scalar(handles.coefficients,...
-    handles.tfinal_dosing,24*7,'','',handles.drugdose,...
-    handles.tau,handles.drugname,handles.renalfunction,'-');
-handles.t = drugoutput(:,1);
-% Drug is diacid concentration since the inhibition depends on the PK of the diacid
-handles.drug_conc = drugoutput(:,2); 
-handles.AngII_conc = drugoutput(:,3);
-handles.clear = 'no';
-guidata(hObject, handles);
+if strcmp(handles.drugname,'delapril') && strcmp(handles.renalfunction,'impaired')
+    h = msgbox('No data available. Select normal renal function for delapril.','Error')
+elseif strcmp(handles.drugname,'ramipril') && strcmp(handles.renalfunction,'normal')
+    h = msgbox('No data available. Select impaired renal function for ramipril.','Error')
+else
+    drugoutput = call_PKPD_model_scalar(handles.coefficients,...
+        handles.tfinal_dosing,24*7,'','',handles.drugdose,...
+        handles.tau,handles.drugname,handles.renalfunction,'-');
+    handles.t = drugoutput(:,1);
+    % Drug is diacid concentration since the inhibition depends on the PK of the diacid
+    handles.drug_conc = drugoutput(:,2); 
+    handles.AngII_conc = drugoutput(:,3);
+    handles.clear = 'no';
+    guidata(hObject, handles);
+end
 
 function update_gui_plot(hObject,handles)
 if strcmp(handles.checked,'yes')
@@ -151,8 +158,14 @@ axes(handles.Drugvstime);
 
 if strcmp(handles.drugname,'benazepril')
     drugnum = 1;
-else
+elseif strcmp(handles.drugname,'cilazapril')
     drugnum = 2;
+elseif strcmp(handles.drugname,'lisinopril')
+    drugnum = 3;
+elseif strcmp(handles.drugname,'delapril')
+    drugnum = 4;
+elseif strcmp(handles.drugname,'ramipril')
+    drugnum = 5;
 end
 row_index = mod(handles.row_index,7)+1;
 if handles.num_doses_per_day == 1
@@ -171,6 +184,7 @@ legend('-Dynamiclegend','Location','Best')
 xlabel('t (days)'), ylabel('Drug Concentration in the Body (ng/mL)')
 % if strcmp(handles.checked,'no')
 %     plot_baseline(hObject,handles)
+%     plot_zero(hObject,handles);
 % end
 axes(handles.AngIIvstime);
 
@@ -204,6 +218,7 @@ function clearplots_button_Callback(hObject, eventdata, handles)
 clearplots(hObject,handles)
 % if strcmp(handles.checked,'yes');
     plot_baseline(hObject,handles);
+    plot_zero(hObject,handles);
 % end
 
 
@@ -211,6 +226,18 @@ function plot_baseline(hObject,handles)
 axes(handles.AngIIvstime);
 plot(0:7,ones(size(0:7)).*handles.baseline,'k','linewidth',5,'DisplayName',...
     'Target Max: [hormone] reduced by 30%')
+% hold(handles.AngIIvstime,'on')
+% plot(0:7,zeros(size(0:7)),'r','linewidth',5,'DisplayName',...
+%     'Target Min: [hormone] > 0%')
+% axis([0 7 0 100])
+legend('-Dynamiclegend','Location','Best')
+hold(handles.AngIIvstime,'on')
+guidata(hObject, handles);
+
+function plot_zero(hObject,handles)
+axes(handles.AngIIvstime);
+plot(0:7,ones(size(0:7)).*handles.zero,'r:','linewidth',5,'DisplayName',...
+    'Physical Minimum: [hormone] reduced by 100%')
 % hold(handles.AngIIvstime,'on')
 % plot(0:7,zeros(size(0:7)),'r','linewidth',5,'DisplayName',...
 %     'Target Min: [hormone] > 0%')
@@ -243,6 +270,7 @@ if (get(hObject,'Value') == get(hObject,'Max'))
 else
     clearplots(hObject,handles);
     plot_baseline(hObject,handles);
+    plot_zero(hObject,handles);
     handles.checked = 'no';
     hold(handles.Drugvstime,'off')
     hold(handles.AngIIvstime,'off')
@@ -266,15 +294,21 @@ function run_sim_button_Callback(hObject, eventdata, handles)
 % hObject    handle to run_sim_button (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+%if strcmp(handles.drugname,'ramipril') & strcmp(handles.renalfunction,'normal')
+%        h = msgbox('No data available. Select impaired renal function.' ,'Error')    
 
+%elseif strcmp(handles.drugname,'delapril') & strcmp(handles.renalfunction,'impaired')
+%        h = msgbox('No data available. Please make a diffrent selection' ,'Error')
+%else
 handles = run_drug_dose_to_AngII(hObject,handles);
 guidata(hObject, handles);
 if strcmp(handles.checked,'no')
     clearplots(hObject,handles);
     plot_baseline(hObject,handles);
+    plot_zero(hObject,handles);
 end
+%end
 update_gui_plot(hObject,handles);
-
 
 function dosesize_Callback(hObject, eventdata, handles)
 % hObject    handle to dosesize (see GCBO)
@@ -408,7 +442,7 @@ function aboutdrugs_button_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 h = msgbox(...
-{'Benazepril, under the brand name Lotensin, is an ACE inhibitor used for treating high blood pressure. This drug may also be used to treat heart failure and chronic renal failure or to prevent kidney damage in patients with diabetes.' 'Cilazapril is an ACE inhibitor used to treat mild-to-moderate high blood pressure and congestive heart failure. The usual recommended dose depends on the condition being treated as well as kidney and liver function.'},...
+{'Benazepril, under the brand name Lotensin, is an ACE inhibitor used for treating high blood pressure. This drug may also be used to treat heart failure and chronic renal failure or to prevent kidney damage in patients with diabetes.' 'Cilazapril is an ACE inhibitor used to treat mild-to-moderate high blood pressure and congestive heart failure. The usual recommended dose depends on the condition being treated as well as kidney and liver function.' 'Lisinopril, the third ACE inhibitor introduced into therapy in the early 1990s, is used primarily in treatment of high blood pressure, heart failure, and after heart attacks. It is also used for preventing kidney complications in diabetics.' 'Delapril is an ACE inhibitor used as an antihypertensive drug in some European and Asian countries but not in America. It is taken orally in varying dose sizes.' 'Ramipril, sold under the brand name Altace among others, is an ACE inhibitor used to treat hypertension and congestive heart failure. Ramipril is also used to improve survival after a heart attack. It may also be used in high risk patients to help prevent heart attacks and strokes.'},...
 'About the Pharmaceutical Drugs');
 % Benazepril is available in tablet form in 5, 10, 20, and 40 milligrams (mg).
 % The dose range for treatment of high blood pressure is 1 mg to 5 mg once daily. Cilazapril is available in tablet form in 1, 2.5, and 5 mg doses.
@@ -434,8 +468,20 @@ items = get(hObject,'String');
 index_selected = get(hObject,'Value');
 if index_selected == 1
     handles.drugname = 'benazepril';
-else
+elseif index_selected == 2
    handles.drugname = 'cilazapril';
+elseif index_selected == 3
+   handles.drugname = 'lisinopril';
+elseif index_selected == 4
+    handles.drugname = 'delapril';
+    if strcmp(handles.renalfunction,'impaired')
+        h = msgbox('No data available. Select normal renal function for delapril.','Error')
+    end
+elseif index_selected == 5
+    handles.drugname = 'ramipril';
+    if strcmp(handles.renalfunction,'normal')
+        h = msgbox('No data available. Select impaired renal function for ramipril.' ,'Error')
+    end
 end
 guidata(hObject, handles);
 handles = update_coefficients(hObject,handles);
@@ -459,10 +505,17 @@ function renalfunction_menu_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 items = get(hObject,'String');
 index_selected = get(hObject,'Value');
+
 if index_selected == 1
     handles.renalfunction = 'normal';
-else
+    if strcmp(handles.drugname,'ramipril')
+        h = msgbox('No data available. Select impaired renal function for ramipril.' ,'Error')
+    end
+elseif index_selected == 2
     handles.renalfunction = 'impaired';
+    if strcmp(handles.drugname,'delapril')
+        h = msgbox('No data available. Select normal renal function for delapril' ,'Error')
+    end
 end
 guidata(hObject, handles);
 handles = update_coefficients(hObject,handles);
