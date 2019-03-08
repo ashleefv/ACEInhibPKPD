@@ -3,11 +3,14 @@ PKPD model for ACE inhibition with benazepril or cilazapril; educational drug do
 
 Note: SB17CHE.mlappinstall is an updated version that includes 5 drugs: benazepril, cilazapril, lisinopril, delapril, and ramipril.
 
-v.1.1 JOSS reviewed
+Code v.1.1 JOSS reviewed
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.885362.svg)](https://doi.org/10.5281/zenodo.885362)
 
-v.2.1 Expanded GUI
+Code v.2.1 Expanded GUI
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1318682.svg)](https://doi.org/10.5281/zenodo.1318682)
+
+Paper:
+[![DOI](http://joss.theoj.org/papers/10.21105/joss.00340/status.svg)](https://doi.org/10.21105/joss.00340)
 
 ![GUI screenshot](thumbnail.png)
 
