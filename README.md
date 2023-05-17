@@ -31,13 +31,15 @@ v.2.1 co-author Carley V. Eastep, School of Chemical Engineering,
 Oklahoma State University.
 
 ### Software publication
-A. N. Ford Versypt, G. K. Harrell, A. N. McPeak, (2017). ACEInhibPKPD: An open-source MATLAB app for a pharmacokinetic/pharmacodynamic model of ACE inhibition. Journal of Open Source Software, 2(17), 340, https://doi.org/10.21105/joss.00340
+A. N. Ford Versypt, G. K. Harrell, A. N. McPeak, (2017). ACEInhibPKPD: An open-source MATLAB app for a pharmacokinetic/pharmacodynamic model of ACE inhibition. Journal of Open Source Software, 2(17), 340, [https://doi.org/10.21105/joss.00340](https://doi.org/10.21105/joss.00340)
 
 ### Related publication for model details
-A. N. Ford Versypt, G. K. Harrell, A. N. McPeak, A pharmacokinetic/pharmacodynamic model of ACE inhibition of the renin-angiotensin system for normal and impaired renal function, Computers & Chemical Engineering, 104 (2017) 311–322. https://doi.org/10.1016/j.compchemeng.2017.03.027
+A. N. Ford Versypt, G. K. Harrell, A. N. McPeak, A pharmacokinetic/pharmacodynamic model of ACE inhibition of the renin-angiotensin system for normal and impaired renal function, Computers & Chemical Engineering, 104 (2017) 311–322. [https://doi.org/10.1016/j.compchemeng.2017.03.027](https://doi.org/10.1016/j.compchemeng.2017.03.027)
 
-### Related publication for educational use details
-G. K. Harrell, A. N. McPeak, and A. N. Ford Versypt, A pharmacokinetic simulation-based module to introduce mass balances and chemical engineering design concepts to engineering freshmen, Proceedings of the ASEE Annual Conference, Columbus, OH, 2017. https://peer.asee.org/27493
+### Related publications for educational use details
+G. K. Harrell, A. N. McPeak, and A. N. Ford Versypt, A pharmacokinetic simulation-based module to introduce mass balances and chemical engineering design concepts to engineering freshmen, Proceedings of the ASEE Annual Conference, Columbus, OH, 2017. [https://peer.asee.org/27493](https://peer.asee.org/27493)
+
+C. V. Eastep, G. K. Harrell, A. N. McPeak, and A. N. Ford Versypt#, A MATLAB App to Introduce Chemical Engineering Design Concepts to Engineering Freshmen through a Pharmaceutical Dosing Case Study, Chemical Engineering Education, 53(2), 85–90, 2019. [https://journals.flvc.org/cee/article/view/106668](https://journals.flvc.org/cee/article/view/106668)
 
 ### Data sources for ACE inhibitor drugs
 * H. Shionoiri, S. Ueda, K. Minamisawa, Pharmacokinetics and Pharmacodynamics 
